@@ -17,4 +17,9 @@ export class Age {
         let venusAge = Math.floor(this.earthAge /0.62 );
         return venusAge;
     }
+
+    earthAgeToMarsAge() {
+        let marsAge = Math.floor(this.earthAge /1.88 );
+        return marsAge;
+    }
 }
