@@ -61,8 +61,8 @@ describe('Age', function() {
     });
 
     it ('should test secondsDifferencefromDayDifference and return correct statement', function() {
-        let remainder = testAge.secondsDifferencefromDayDifference(1, 1, 2000, 1, 1, 2001);
-        expect(remainder).toEqual("Those dates are 31968000 seconds apart from each other!");
+        let remainder = testAge.secondsDifferencefromDayDifference(4, 10, 2000, 7, 19, 2001);
+        expect(remainder).toEqual("Those dates are 40176000 seconds apart from each other!");
     });
 
     // it ('should test calculateDayOfYear and return correct statement', function() {

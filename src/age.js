@@ -44,14 +44,12 @@ export class Age {
     //hard coded dates for testing
     secondsDifferencefromDayDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
         let yearDifference = secondYear - firstYear;
-        let firstDayOfYear = 15;
-        let secondDayOfYear = 20;
+        let firstDayOfYear = 100;
+        let secondDayOfYear = 200;
         let difference;
 
-        if (firstDayOfYear > secondDayOfYear) {
-            difference = ((firstDayOfYear - secondDayOfYear) + (yearDifference * 365)) * 86400;
-        } else if (secondDayOfYear > firstDayOfYear) {
-            difference = ((secondDayOfYear - firstDayOfYear) + (yearDifference * 365)) * 86400;
+        if (firstDayOfYear !== secondDayOfYear) {
+            difference = ((365 - firstDayOfYear + secondDayOfYear) + ((yearDifference - 1) * 365)) * 86400;
         } else if (firstDayOfYear === secondDayOfYear) {
             difference = (365 * yearDifference) *  31556900;
         }
