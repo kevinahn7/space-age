@@ -68,14 +68,16 @@ export class Age {
         else if (theMonth === 1) {
             theDay = this.dayOfYear;
             console.log("in the method, theDay = " + theDay)
+            console.log("the day of year before erasing is " + this.dayOfYear);
             this.dayOfYear = 0;
             theDay += day;
-            console.log(this.dayOfYear);
-            console.log("after adding day, theDay is " + theDay)
+            console.log("the day of year after erasing is " + this.dayOfYear);
+            debugger;
+            console.log("after adding day, theDay is " + theDay);
+            debugger;
             return theDay;
         }
         theMonth--;
-        console.log("should be decrementing down " + theDay)
         this.calculateDayOfYear(theMonth, day);
 
         

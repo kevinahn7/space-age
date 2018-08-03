@@ -62,7 +62,6 @@ describe('Age', function() {
 
     it ('should test calculateDayOfYear and return correct statement', function() {
         let day = testAge.calculateDayOfYear(2, 15);
-        console.log("in the test " + day);
         expect(day).toEqual(43);
     });
 });
