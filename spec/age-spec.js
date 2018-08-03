@@ -16,4 +16,9 @@ describe('Age', function() {
         expect(mercuryAge).toEqual(8);
     });
 
+    it ('should test earthAgeToVenusyAge and return correct number of Venus Years', function() {
+        let venusAge = testAge.earthAgeToVenusAge();
+        expect(venusAge).toEqual(3);
+    });
+
 });
