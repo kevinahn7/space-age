@@ -41,27 +41,41 @@ export class Age {
         }
     }
 
-    secondsDifferencefromDayDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
-        let yearDifference = Math.abs(firstyear - secondYear);
-        let firstDayOfYear = this.calculateDayOfYear(firstMonth, firstDay);
-        let secondDayOfYear = this.calculateDayOfYear(secondMonth, secondDay);
+    // secondsDifferencefromDayDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
+    //     let yearDifference = secondYear - firstYear;
+    //     let firstDayOfYear = this.calculateDayOfYear(firstMonth, firstDay);
+    //     let secondDayOfYear = this.calculateDayOfYear(secondMonth, secondDay);
+    //     let difference;
+
+    //     if (firstDayOfYear > secondDayOfYear) {
+
+    //     } else if(secondDayOfYear > firstDayOfYear) {
+
+    //     } else if (firstDayOfYear === secondDayOfYear) {
+    //         difference = (365 * yearDifference) *  31556900;
+    //     };
         
+    //     return `Those dates are ${difference} seconds apart from each other!`;
         
-    };
+    // };
 
     calculateDayOfYear(month, day) {
         let theMonth = month;
-
+        let theDay;
         if (theMonth === 2) this.dayOfYear += 28;
         else if(theMonth === 4 || theMonth === 6 || theMonth === 9 || theMonth === 11) this.dayOfYear += 30;
         else if (theMonth === 3 || theMonth === 5 || theMonth === 7 || theMonth === 8 || theMonth === 10 || theMonth === 12) this.dayOfYear += 31;
         else if (theMonth === 1) {
-            let theDay = this.dayOfYear;
+            theDay = this.dayOfYear;
+            console.log("in the method, theDay = " + theDay)
             this.dayOfYear = 0;
             theDay += day;
+            console.log(this.dayOfYear);
+            console.log("after adding day, theDay is " + theDay)
             return theDay;
         }
         theMonth--;
+        console.log("should be decrementing down " + theDay)
         this.calculateDayOfYear(theMonth, day);
 
         

@@ -59,4 +59,10 @@ describe('Age', function() {
         let remainder = testAge5.earthYearsLeft();
         expect(remainder).toEqual("Wow you are 11 years over the average life expectancy in the USA");
     });
+
+    it ('should test calculateDayOfYear and return correct statement', function() {
+        let day = testAge.calculateDayOfYear(2, 15);
+        console.log("in the test " + day);
+        expect(day).toEqual(43);
+    });
 });
