@@ -26,4 +26,37 @@ describe('Age', function() {
         expect(marsAge).toEqual(5);
     });
 
+    it ('should test earthAgeToJupiterAge and return correct number of Jupiter Years', function() {
+        let jupiterAge = testAge.earthAgeToJupiterAge();
+        expect(jupiterAge).toEqual(0);
+    });
+
+    it ('should test earthYearsLeft when you are one year less than USA average and return correct number of Earth Year left', function() {
+        let testAge2 = new Age(78);
+        let remainder = testAge2.earthYearsLeft();
+        expect(remainder).toEqual("You have exactly 1 year left! Use it wisely");
+    });
+
+    it ('should test earthYearsLeft when less than USA average and return correct number of Earth Years left', function() {
+        let remainder = testAge.earthYearsLeft();
+        expect(remainder).toEqual("You have 69 years left in your life, use it wisely");
+    });
+
+    it ('should test earthYearsLeft when you are exactly at the USA average and return correct statement', function() {
+        let testAge3 = new Age(79);
+        let remainder = testAge3.earthYearsLeft();
+        expect(remainder).toEqual("According to my calculations, you are at right at the life expectancy of an average person in the USA");
+    });
+
+    it ('should test earthYearsLeft when you are exactly one year above the USA average and return correct statement', function() {
+        let testAge4 = new Age(80);
+        let remainder = testAge4.earthYearsLeft();
+        expect(remainder).toEqual("You are exactly 1 year over the average life expectancy in the USA");
+    });
+
+    it ('should test earthYearsLeft when you are above the USA average and return correct statement', function() {
+        let testAge5 = new Age(90);
+        let remainder = testAge5.earthYearsLeft();
+        expect(remainder).toEqual("Wow you are 11 years over the average life expectancy in the USA");
+    });
 });
