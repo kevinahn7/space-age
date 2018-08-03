@@ -57,4 +57,4 @@ To build a calculator to determine your age on different planets
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Your Name Here**
+Copyright (c) 2018 **Kevin Ahn**

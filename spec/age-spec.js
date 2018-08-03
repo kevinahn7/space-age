@@ -65,8 +65,6 @@ describe('Age', function() {
         expect(remainder).toEqual("Those dates are 31968000 seconds apart from each other!");
     });
 
-
-
     // it ('should test calculateDayOfYear and return correct statement', function() {
     //     let theNewOne = testAge.calculateDayOfYear(3, 15);
     //     console.log("getting returned " + theNewOne)
