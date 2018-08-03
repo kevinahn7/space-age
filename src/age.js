@@ -48,15 +48,14 @@ export class Age {
     //     let difference;
 
     //     if (firstDayOfYear > secondDayOfYear) {
-
+    //         difference = ((firstDayOfYear - secondDayOfYear) + (yearDifference * 365)) * 86400;
     //     } else if(secondDayOfYear > firstDayOfYear) {
-
+    //         difference = ((300 + secondDayOfYear - firstDayOfYear) + (yearDifference * 365)) * 86400;
     //     } else if (firstDayOfYear === secondDayOfYear) {
     //         difference = (365 * yearDifference) *  31556900;
     //     };
         
     //     return `Those dates are ${difference} seconds apart from each other!`;
-        
     // };
 
     calculateDayOfYear(month, day) {
@@ -72,16 +71,10 @@ export class Age {
             this.dayOfYear = 0;
             theDay += day;
             console.log("the day of year after erasing is " + this.dayOfYear);
-            debugger;
             console.log("after adding day, theDay is " + theDay);
-            debugger;
-            return theDay;
+            return `theDay is ${theDay}`;
         }
         theMonth--;
         this.calculateDayOfYear(theMonth, day);
-
-        
-       
     }
-
 }
