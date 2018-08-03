@@ -1,6 +1,7 @@
 export class Age {
     constructor(earthYears) {
         this.earthAge = earthYears;
+        this.dayOfYear = 0;
     }
 
     earthAgeToSeconds() {
@@ -40,7 +41,31 @@ export class Age {
         }
     }
 
-    secondsDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
-
+    secondsDifferencefromDayDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
+        let yearDifference = Math.abs(firstyear - secondYear);
+        let firstDayOfYear = this.calculateDayOfYear(firstMonth, firstDay);
+        let secondDayOfYear = this.calculateDayOfYear(secondMonth, secondDay);
+        
+        
     };
+
+    calculateDayOfYear(month, day) {
+        let theMonth = month;
+
+        if (theMonth === 2) this.dayOfYear += 28;
+        else if(theMonth === 4 || theMonth === 6 || theMonth === 9 || theMonth === 11) this.dayOfYear += 30;
+        else if (theMonth === 3 || theMonth === 5 || theMonth === 7 || theMonth === 8 || theMonth === 10 || theMonth === 12) this.dayOfYear += 31;
+        else if (theMonth === 1) {
+            let theDay = this.dayOfYear;
+            this.dayOfYear = 0;
+            theDay += day;
+            return theDay;
+        }
+        theMonth--;
+        this.calculateDayOfYear(theMonth, day);
+
+        
+       
+    }
+
 }
