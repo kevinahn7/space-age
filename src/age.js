@@ -39,4 +39,8 @@ export class Age {
             return `Wow you are ${remainder} years over the average life expectancy in the USA`;
         }
     }
+
+    secondsDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
+
+    };
 }
