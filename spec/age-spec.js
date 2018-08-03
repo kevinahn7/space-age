@@ -9,6 +9,11 @@ describe('Age', function() {
     it ('should test earthAgeToSeconds and return correct number of seconds', function() {
         let seconds = testAge.earthAgeToSeconds();
         expect(seconds).toEqual(63113800);
-    })
+    });
+
+    it ('should test earthAgeToMercuryAge and return correct number of Mercury Years', function() {
+        let mercuryAge = testAge.earthAgeToMercuryAge();
+        expect(mercuryAge).toEqual(8);
+    });
 
 });
