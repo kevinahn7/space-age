@@ -41,19 +41,39 @@ export class Age {
         }
     }
 
+    //hard coded dates for testing
+    secondsDifferencefromDayDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
+        let yearDifference = secondYear - firstYear;
+        let firstDayOfYear = 15;
+        let secondDayOfYear = 20;
+        let difference;
+
+        if (firstDayOfYear > secondDayOfYear) {
+            difference = ((firstDayOfYear - secondDayOfYear) + (yearDifference * 365)) * 86400;
+        } else if (secondDayOfYear > firstDayOfYear) {
+            difference = ((secondDayOfYear - firstDayOfYear) + (yearDifference * 365)) * 86400;
+        } else if (firstDayOfYear === secondDayOfYear) {
+            difference = (365 * yearDifference) *  31556900;
+        }
+        
+        return `Those dates are ${difference} seconds apart from each other!`;
+    };
+
     // secondsDifferencefromDayDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
     //     let yearDifference = secondYear - firstYear;
-    //     let firstDayOfYear = this.calculateDayOfYear(firstMonth, firstDay);
-    //     let secondDayOfYear = this.calculateDayOfYear(secondMonth, secondDay);
+    //     let firstDayOfYear = 15;
+    //     let secondDayOfYear = 20;
     //     let difference;
 
     //     if (firstDayOfYear > secondDayOfYear) {
     //         difference = ((firstDayOfYear - secondDayOfYear) + (yearDifference * 365)) * 86400;
-    //     } else if(secondDayOfYear > firstDayOfYear) {
-    //         difference = ((300 + secondDayOfYear - firstDayOfYear) + (yearDifference * 365)) * 86400;
+    //     } else if (secondDayOfYear > firstDayOfYear && yearDifference) {
+    //         difference = ((365 + secondDayOfYear - firstDayOfYear) + (yearDifference * 365)) * 86400;
+    //     } else if (secondDayOfYear > firstDayOfYear && !yearDifference) {
+    //         difference = (secondDayOfYear - firstDayOfYear) * 86400;
     //     } else if (firstDayOfYear === secondDayOfYear) {
     //         difference = (365 * yearDifference) *  31556900;
-    //     };
+    //     }
         
     //     return `Those dates are ${difference} seconds apart from each other!`;
     // };

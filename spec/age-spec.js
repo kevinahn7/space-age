@@ -60,9 +60,16 @@ describe('Age', function() {
         expect(remainder).toEqual("Wow you are 11 years over the average life expectancy in the USA");
     });
 
-    it ('should test calculateDayOfYear and return correct statement', function() {
-        let theNewOne = testAge.calculateDayOfYear(3, 15);
-        console.log("getting returned " + theNewOne)
-        expect(theNewOne).toEqual(74);
+    it ('should test secondsDifferencefromDayDifference and return correct statement', function() {
+        let remainder = testAge.secondsDifferencefromDayDifference(1, 1, 2000, 1, 1, 2001);
+        expect(remainder).toEqual("Those dates are 31968000 seconds apart from each other!");
     });
+
+
+
+    // it ('should test calculateDayOfYear and return correct statement', function() {
+    //     let theNewOne = testAge.calculateDayOfYear(3, 15);
+    //     console.log("getting returned " + theNewOne)
+    //     expect(theNewOne).toEqual(74);
+    // });
 });
