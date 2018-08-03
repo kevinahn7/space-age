@@ -17,8 +17,8 @@ To build a calculator to determine your age on different planets
 | **Return the age of a human in Venus years** | Enter: 10 | Output: 16 |
 | **Return the age of a human in Mars years** | Enter: 10 | Output: 5 |
 | **Return the age of a human in Jupiter years** | Enter: 10 | Output: 0 |
-| **Determine how many years a user has left to live on each planet** | Enter: 10 | Output: 69 |
-| **If a user has already surpassed the average life expectancy, return the number of years they have lived past the life expectancy** | Enter: 90 | Output: 11 |
+| **Determine how many years a user has left to live on each planet** | Enter: "You have 69 years left in your life, use it wisely" | Output: 69 |
+| **If a user has already surpassed the average life expectancy, return the number of years they have lived past the life expectancy** | Enter: 90 | Output: "Wow you are 11 years over the average life expectancy in the USA" |
 | **Take two dates and determine the difference, in seconds, between the two** | Enter: January 1st 2018, January 5th 2018 | Output: 86400 |
 
 
