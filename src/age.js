@@ -1,9 +1,9 @@
 export class Age {
     constructor(earthYears) {
-        this.earthAge = ageInYears;
+        this.earthAge = earthYears;
     }
     earthAgeToSeconds() {
         let seconds = this.earthAge * 31556900;
         return seconds;
     };
-};
+}
