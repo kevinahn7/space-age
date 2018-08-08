@@ -61,13 +61,13 @@ describe('Age', function() {
     });
 
     it ('should test secondsDifferencefromDayDifference and return correct statement', function() {
-        let remainder = testAge.secondsDifferencefromDayDifference(4, 11, 2000, 7, 20, 2001);
-        expect(remainder).toEqual("Those dates are 40176000 seconds apart from each other!");
+        let remainder = testAge.secondsDifferencefromDayDifference(4, 11, 2001, 7, 20, 2001);
+        expect(remainder).toEqual("Those dates are 8640000 seconds apart from each other!");
     });
 
-    // it ('should test calculateDayOfYear and return correct statement', function() {
-    //     let theNewOne = testAge.calculateDayOfYear(3, 15);
-    //     console.log("getting returned " + theNewOne)
-    //     expect(theNewOne).toEqual(74);
-    // });
+    it ('should test calculateDayOfYear and return correct statement', function() {
+        let theNewOne = testAge.calculateDayOfYear(3, 15);
+        console.log("getting returned " + theNewOne)
+        expect(theNewOne).toEqual(74);
+    });
 });

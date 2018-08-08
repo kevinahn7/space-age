@@ -41,15 +41,19 @@ export class Age {
         }
     }
 
-    //hard coded dates for testing
+
     secondsDifferencefromDayDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
         let yearDifference = secondYear - firstYear;
-        let firstDayOfYear = 100;
-        let secondDayOfYear = 200;
+        let firstDayOfYear = this.calculateDayOfYear(firstMonth, firstDay);
+        let secondDayOfYear = this.calculateDayOfYear(secondMonth, secondDay);
         let difference;
 
-        if (firstDayOfYear !== secondDayOfYear) {
-            difference = ((365 - firstDayOfYear + secondDayOfYear) + ((yearDifference - 1) * 365)) * 86400;
+        if (firstDayOfYear > secondDayOfYear) {
+            difference = ((firstDayOfYear - secondDayOfYear) + (yearDifference * 365)) * 86400;
+        } else if (secondDayOfYear > firstDayOfYear && yearDifference) {
+            difference = ((365 + secondDayOfYear - firstDayOfYear) + (yearDifference * 365)) * 86400;
+        } else if (secondDayOfYear > firstDayOfYear && !yearDifference) {
+            difference = (secondDayOfYear - firstDayOfYear) * 86400;
         } else if (firstDayOfYear === secondDayOfYear) {
             difference = (365 * yearDifference) *  31556900;
         }
@@ -57,44 +61,18 @@ export class Age {
         return `Those dates are ${difference} seconds apart from each other!`;
     };
 
-        //actual method, but the method called in this method is not fiving back a correct value
-    // secondsDifferencefromDayDifference(firstMonth, firstDay, firstYear, secondMonth, secondDay, secondYear) {
-    //     let yearDifference = secondYear - firstYear;
-    //     let firstDayOfYear = this.calculateDayOfYear(firstMonth, firstDay);
-    //     let secondDayOfYear = this.calculateDayOfYear(secondMonth, secondDay);
-    //     let difference;
-
-    //     if (firstDayOfYear > secondDayOfYear) {
-    //         difference = ((firstDayOfYear - secondDayOfYear) + (yearDifference * 365)) * 86400;
-    //     } else if (secondDayOfYear > firstDayOfYear && yearDifference) {
-    //         difference = ((365 + secondDayOfYear - firstDayOfYear) + (yearDifference * 365)) * 86400;
-    //     } else if (secondDayOfYear > firstDayOfYear && !yearDifference) {
-    //         difference = (secondDayOfYear - firstDayOfYear) * 86400;
-    //     } else if (firstDayOfYear === secondDayOfYear) {
-    //         difference = (365 * yearDifference) *  31556900;
-    //     }
-        
-    //     return `Those dates are ${difference} seconds apart from each other!`;
-    // };
-
-    // calculateDayOfYear(month, day) {
-    //     let theMonth = month;
-    //     let theDay;
-    //     if (theMonth === 2) this.dayOfYear += 28;
-    //     else if(theMonth === 4 || theMonth === 6 || theMonth === 9 || theMonth === 11) this.dayOfYear += 30;
-    //     else if (theMonth === 3 || theMonth === 5 || theMonth === 7 || theMonth === 8 || theMonth === 10 || theMonth === 12) this.dayOfYear += 31;
-    //     else if (theMonth === 1) {
-    //         theDay = this.dayOfYear;
-    //         console.log("in the method, theDay = " + theDay)
-    //         console.log("the day of year before erasing is " + this.dayOfYear);
-    //         this.dayOfYear = 0;
-    //         theDay += day;
-    //         console.log("the day of year after erasing is " + this.dayOfYear);
-    //         console.log("after adding day, theDay is " + theDay);
-    //         console.log(`The Day is ${theDay}`);
-    //         return theDay;
-    //     }
-    //     theMonth--;
-    //     this.calculateDayOfYear(theMonth, day);
-    // }
+    calculateDayOfYear(month, day) {
+        let theMonth = month - 1;
+        let theDay;
+        if (theMonth === 2) this.dayOfYear += 28;
+        else if (theMonth === 4 || theMonth === 6 || theMonth === 9 || theMonth === 11) this.dayOfYear += 30;
+        else if (theMonth === 1 || theMonth === 3 || theMonth === 5 || theMonth === 7 || theMonth === 8 || theMonth === 10 || theMonth === 12) this.dayOfYear += 31;
+        else {
+            theDay = this.dayOfYear;
+            this.dayOfYear = 0;
+            theDay += day;
+            return theDay;
+        }
+        return this.calculateDayOfYear(theMonth, day);
+    }
 }
